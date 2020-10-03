@@ -1,0 +1,30 @@
+config_name: Rover-AI Robotics
+config_desc: This is a AI based Rover Application
+
+rover_cam:
+  device_id: 0
+
+navigation_config:
+  motor_L:
+    gpio_pins:
+      enable: x
+      in1: y
+      in2: z
+    pwm_default: 100
+  motor_R:
+    gpio_pins:
+      enable: x
+      in1: y
+      in2: z
+    pwm_default: 100
+
+key_events:
+  W: move_forward
+  S: move_backward
+  A: rotate_left
+  D: rotate_right
+  SPACE: stop
+  Q: rotate_360
+  E: exit
+#qr_nav_config:
+
