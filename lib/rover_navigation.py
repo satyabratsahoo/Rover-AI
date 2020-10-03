@@ -65,7 +65,7 @@ class Motor:
         GPIO.setup(self.enable, GPIO.OUT)
         GPIO.setup(self.in1, GPIO.OUT)
         GPIO.setup(self.in2, GPIO.OUT)
-        self.pwm = GPIO.PWM(self.enable, 0)
+        self.pwm = GPIO.PWM(self.enable, 100)
         self.default_duty_cycle = arg_config['pwm_default']
         self.pwm.start(0)
         GPIO.output(self.in1, GPIO.LOW)
