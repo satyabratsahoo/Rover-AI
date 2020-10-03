@@ -15,4 +15,3 @@ class VoiceService:
     async def say(self, arg_in_text):
         self.engine.say(arg_in_text)
         self.engine.runAndWait()
-        await asyncio.sleep(1)

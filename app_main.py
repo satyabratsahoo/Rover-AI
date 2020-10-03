@@ -4,7 +4,7 @@ from lib.rover_events import process_event
 from lib.qr_reader import QrReader
 from pyzbar.pyzbar import decode
 from lib.voice import VoiceService
-
+import asyncio
 if __name__ == '__main__':
 
     log.info('Rover Initialization Started ....')
@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     log.info('Voice Service Initialization Started ....')
     voice = VoiceService()
-    voice.say('Rover-AI voice service is activated')
+    asyncio.run(voice.say('Rover-AI voice service is activated'))
     log.info('Voice Service Initialization Completed ....')
 
     log.info('Started Rover Camera ....')
