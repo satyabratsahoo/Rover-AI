@@ -1,6 +1,9 @@
 # Rover-AI:
-About: A Raspberry PI based Analyzing Robot.  
+About:  
+A Raspberry PI based Analyzing Robot.  
+
 Version: 1.0.1  
+
 Author: [Sahoo, Satyabrat]
 
 
