@@ -26,5 +26,28 @@ key_events:
   SPACE: stop
   Q: rotate_360
   E: exit
-#qr_nav_config:
 
+rover_qr_configs:
+  out_path: resources/generated/qr_codes
+  embed_log: resources/images/logo.jpg
+
+  qr_app_name: Rover-AI
+  action_configs:
+    move_forward:
+      qr_action_id: 9001
+      qr_action_details: Move rover forward
+    move_backward:
+      qr_action_id: 9002
+      qr_action_details: Move rover backward
+    rotate_left:
+      qr_action_id: 9003
+      qr_action_details: Rotate rover left
+    rotate_right:
+      qr_action_id: 9004
+      qr_action_details: Rotate rover right
+    stop:
+      qr_action_id: 9005
+      qr_action_details: Make rover stop
+    move_360:
+      qr_action_id: 9006
+      qr_action_details: Rover rotate 360
