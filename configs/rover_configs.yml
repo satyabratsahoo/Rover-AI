@@ -7,15 +7,15 @@ rover_cam:
 navigation_config:
   motor_L:
     gpio_pins:
-      enable: x
-      in1: y
-      in2: z
+      enable: 2
+      in1: 3
+      in2: 4
     pwm_default: 100
   motor_R:
     gpio_pins:
-      enable: x
-      in1: y
-      in2: z
+      enable: 5
+      in1: 6
+      in2: 7
     pwm_default: 100
 
 key_events:
