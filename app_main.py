@@ -3,11 +3,18 @@ from lib.common import AppConfig, log
 from lib.rover_events import process_event
 from lib.qr_reader import QrReader
 from pyzbar.pyzbar import decode
+from lib.voice import VoiceService
 
 if __name__ == '__main__':
 
     log.info('Rover Initialization Started ....')
     app_config = AppConfig().config
+    log.info('Rover Initialization Completed ....')
+
+    log.info('Voice Service Initialization Started ....')
+    voice = VoiceService()
+    voice.say('Rover-AI voice service is activated')
+    log.info('Voice Service Initialization Completed ....')
 
     log.info('Started Rover Camera ....')
     vs = cv2.VideoCapture(app_config['rover_cam']['device_id'])

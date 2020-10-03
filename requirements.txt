@@ -1,0 +1,5 @@
+pyttsx~=1.2
+yaml~=0.1.7
+pyyaml~=5.3
+opencv-python~=4.2.0.34
+pyzbar~=0.1.8
