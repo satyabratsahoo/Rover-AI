@@ -61,7 +61,6 @@ class Motor:
         GPIO.setup(self.in1, GPIO.OUT)
         GPIO.setup(self.in2, GPIO.OUT)
         self.pwm = GPIO.PWM(self.enable, 100)
-        self.sleep_default = 1
         self.default_duty_cycle = arg_config['pwm_default']
         self.pwm.start(0)
 
@@ -69,14 +68,14 @@ class Motor:
         self.pwm.ChangeDutyCycle(self.default_duty_cycle)
         GPIO.output(self.in1, GPIO.HIGH)
         GPIO.output(self.in2, GPIO.LOW)
-        sleep(self.sleep_default)
+        # sleep(self.sleep_default)
 
     def backward(self):
         self.pwm.ChangeDutyCycle(self.default_duty_cycle)
         GPIO.output(self.in1, GPIO.LOW)
         GPIO.output(self.in2, GPIO.HIGH)
-        sleep(self.sleep_default)
+        # sleep(self.sleep_default)
 
     def stop(self):
         self.pwm.ChangeDutyCycle(0)
-        sleep(self.sleep_default)
+        # sleep(self.sleep_default)
