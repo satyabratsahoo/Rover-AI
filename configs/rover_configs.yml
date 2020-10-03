@@ -13,9 +13,9 @@ navigation_config:
     pwm_default: 100
   motor_R:
     gpio_pins:
-      enable: 5
-      in1: 6
-      in2: 7
+      enable: 17
+      in1: 22
+      in2: 25
     pwm_default: 100
 
 key_events:

@@ -14,26 +14,35 @@ class Navigation:
         motor_r = app_config['navigation_config']['motor_R']
         self.motor_L = Motor(motor_l)
         self.motor_R = Motor(motor_r)
+        self.d_sleep = 0.5
 
     def move_forward(self):
         self.motor_L.forward()
         self.motor_R.forward()
         log.info('[ROVER] Moving forward')
+        sleep(self.d_sleep)
+        self.stop()
 
     def move_backward(self):
         self.motor_L.backward()
         self.motor_R.backward()
         log.info('[ROVER] Moving Backward')
+        sleep(self.d_sleep)
+        self.stop()
 
     def rotate_left(self):
         self.motor_L.backward()
         self.motor_R.forward()
         log.info('[ROVER] Rotating Left')
+        sleep(self.d_sleep)
+        self.stop()
 
     def rotate_right(self):
         self.motor_R.backward()
         self.motor_L.forward()
         log.info('[ROVER] Rotating Right')
+        sleep(self.d_sleep)
+        self.stop()
 
     def stop(self):
         self.motor_L.stop()
@@ -43,12 +52,8 @@ class Navigation:
     def rotate_360(self):
         self.motor_R.backward()
         self.motor_L.forward()
-        self.motor_R.backward()
-        self.motor_L.forward()
-        self.motor_R.backward()
-        self.motor_L.forward()
-        self.motor_R.backward()
-        self.motor_L.forward()
+        sleep(3)
+        self.stop()
         log.info('[ROVER] Rotate 360')
 
 
@@ -68,14 +73,11 @@ class Motor:
         self.pwm.ChangeDutyCycle(self.default_duty_cycle)
         GPIO.output(self.in1, GPIO.HIGH)
         GPIO.output(self.in2, GPIO.LOW)
-        # sleep(self.sleep_default)
 
     def backward(self):
         self.pwm.ChangeDutyCycle(self.default_duty_cycle)
         GPIO.output(self.in1, GPIO.LOW)
         GPIO.output(self.in2, GPIO.HIGH)
-        # sleep(self.sleep_default)
 
     def stop(self):
         self.pwm.ChangeDutyCycle(0)
-        # sleep(self.sleep_default)
