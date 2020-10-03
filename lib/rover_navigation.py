@@ -14,7 +14,8 @@ class Navigation:
         motor_r = app_config['navigation_config']['motor_R']
         self.motor_L = Motor(motor_l)
         self.motor_R = Motor(motor_r)
-        self.d_sleep = 0.5
+        self.d_sleep = 0.4
+        log.info('Navigation System Initialized')
 
     def move_forward(self):
         self.motor_L.forward()
@@ -47,12 +48,11 @@ class Navigation:
     def stop(self):
         self.motor_L.stop()
         self.motor_R.stop()
-        log.info('[ROVER] Stop Action')
 
     def rotate_360(self):
         self.motor_R.backward()
         self.motor_L.forward()
-        sleep(3)
+        sleep(1)
         self.stop()
         log.info('[ROVER] Rotate 360')
 
@@ -68,13 +68,15 @@ class Motor:
         self.pwm = GPIO.PWM(self.enable, 100)
         self.default_duty_cycle = arg_config['pwm_default']
         self.pwm.start(0)
+        GPIO.output(self.in1, GPIO.LOW)
+        GPIO.output(self.in2, GPIO.LOW)
 
-    def forward(self):
+    def backward(self):
         self.pwm.ChangeDutyCycle(self.default_duty_cycle)
         GPIO.output(self.in1, GPIO.HIGH)
         GPIO.output(self.in2, GPIO.LOW)
 
-    def backward(self):
+    def forward(self):
         self.pwm.ChangeDutyCycle(self.default_duty_cycle)
         GPIO.output(self.in1, GPIO.LOW)
         GPIO.output(self.in2, GPIO.HIGH)

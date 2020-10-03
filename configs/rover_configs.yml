@@ -10,13 +10,13 @@ navigation_config:
       enable: 2
       in1: 3
       in2: 4
-    pwm_default: 100
+    pwm_default: 40
   motor_R:
     gpio_pins:
       enable: 17
       in1: 22
       in2: 25
-    pwm_default: 100
+    pwm_default: 40
 
 key_events:
   W: move_forward

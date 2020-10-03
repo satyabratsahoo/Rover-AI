@@ -3,6 +3,7 @@ from lib.common import AppConfig, log
 from lib.rover_events import process_event
 from lib.qr_reader import QrReader
 from pyzbar.pyzbar import decode
+from lib.rover_navigation import Navigation
 # from lib.voice import VoiceService
 import asyncio
 if __name__ == '__main__':
@@ -10,7 +11,7 @@ if __name__ == '__main__':
     log.info('Rover Initialization Started ....')
     app_config = AppConfig().config
     log.info('Rover Initialization Completed ....')
-
+    navigation = Navigation()
     log.info('Voice Service Initialization Started ....')
     # voice = VoiceService()
     # asyncio.run(voice.say('Rover-AI voice service is activated'))
