@@ -1,4 +1,5 @@
 import pyttsx
+import asyncio
 from lib.common import SingletonDecorator
 
 
@@ -11,6 +12,7 @@ class VoiceService:
         voices = self.engine.getProperty('voices')
         self.engine.setProperty('voice', voices[0].id)
 
-    def say(self, arg_in_text):
+    async def say(self, arg_in_text):
         self.engine.say(arg_in_text)
         self.engine.runAndWait()
+        await asyncio.sleep(1)
