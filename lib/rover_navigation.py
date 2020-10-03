@@ -49,7 +49,7 @@ class Navigation:
         self.motor_L.stop()
         self.motor_R.stop()
 
-    def rotate_360(self):
+    def move_360(self):
         self.motor_R.backward()
         self.motor_L.forward()
         sleep(1)

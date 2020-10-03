@@ -24,7 +24,7 @@ key_events:
   A: rotate_left
   D: rotate_right
   SPACE: stop
-  Q: rotate_360
+  Q: move_360
   E: exit
 
 rover_qr_configs:
