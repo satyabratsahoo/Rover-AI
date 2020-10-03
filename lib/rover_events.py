@@ -1,8 +1,8 @@
 from lib.common import AppConfig
 import sys
 from lib.common import log
-from lib.voice import VoiceService
-# from lib.rover_navigation import Navigation
+# from lib.voice import VoiceService
+from lib.rover_navigation import Navigation
 
 
 def process_event(arg_key):
@@ -13,6 +13,6 @@ def process_event(arg_key):
             log.debug(f'Event Received: {event_cfg[char_value]}')
             if event_cfg[char_value] == 'exit':
                 sys.exit(0)
-            # navigation = Navigation()
-            # function = getattr(navigation, event_cfg[char_value])
-            # function()
+            navigation = Navigation()
+            function = getattr(navigation, event_cfg[char_value])
+            function()
